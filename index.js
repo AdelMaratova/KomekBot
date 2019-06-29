@@ -83,14 +83,29 @@ bot.sendPhoto(msg.chat.id, './Frame.jpg', {"reply_markup":{"inline_keyboard":[[{
 
         bot.on('callback_query', function (msg) {
             if (msg.data === 'food_nursultan'){
-                bot.sendMessage(msg.from.id,"Мы нашли несколько человек в вашем городе, которые нуждаются в продуктах питания. \nКому из них поможем сегодня? :) \n Антонина Семеновна \n Ветеран войны, живет в ветхом доме без отопления. \n Адрес: Навои 234 ");
+                bot.sendMessage(msg.from.id,"Мы нашли несколько человек в вашем городе, которые нуждаются в продуктах питания. \nКому из них поможем сегодня?");
             }
 
             if (msg.data === 'food_nursultan'){
-                bot.sendMessage(msg.from.id,"Антонина Семеновна \n Ветеран войны, живет в ветхом доме без отопления. \n Адрес: Навои 234 ", foodCity);
+                //bot.sendMessage(msg.from.id,"Антонина Семеновна \nВетеран войны, живет в ветхом доме без отопления. \nАдрес: Навои 234 ", foodCity);
+                bot.sendPhoto(msg.from.id, './antonina.jpg', {caption: "*Антонина Семеновна* \nВетеран войны, живет в ветхом доме без отопления. \nАдрес: ул. Навои, д. 234 \nПосмотреть на карте: 2gis.kz/astana/search/достык%2C%205?queryState=center%2F71.538841%2C51.202024%2Fzoom%2F9", parse_mode: "Markdown"});
+                
             }
-    
-            }); 
+
+            //2
+
+            if (msg.data === 'food_nursultan'){
+                //bot.sendMessage(msg.from.id,"Антонина Семеновна \nВетеран войны, живет в ветхом доме без отопления. \nАдрес: Навои 234 ", foodCity);
+                bot.sendPhoto(msg.from.id, './antonina.jpg', {caption: "*Жибек Токтасын* \nМногодетная мать. Живет на улице в палатке. Нуждается в питании для детей. \nАдрес: Во дворе на ул. Байтурсынова д.5 \nПосмотреть на карте: 2gis.kz/astana/search/достык%2C%205?queryState=center%2F71.538841%2C51.202024%2Fzoom%2F9", parse_mode: "Markdown"});
+                
+            }
+
+            
+
+        });
+         
+
+            bot.on("polling_error", (err) => console.log(err));
         
 
         
